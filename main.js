@@ -3,14 +3,14 @@
 SAMPLE
 ----------------------------------------
 
-Challenge: Write function named test that returns the string "This Works!". 
-Solution: This one has already been complete for you. 
+Challenge: Write function named test that returns the string "This Works!".
+Solution: This one has already been complete for you.
 
 */
 
 function test() {
- var string ="This Works!";
- return string;
+    var string = "This Works!";
+    return string;
 }
 
 
@@ -25,7 +25,13 @@ Write function named sum that will take an array of numbers and return the sum o
 Example: if you pass it [1,2,3] then it should return 6 (which is 1 + 2 + 3)
 */
 
-
+function sum(array) {
+    var result = 0;
+    for (var i = 0; i < array.length; i++) {
+        result += array[i];
+    }
+    return result;
+};
 
 
 
@@ -43,7 +49,13 @@ Write function named doubleNumbers that will take an array of numbers and return
 Example: if you pass it [1,2,3] then it should return [2,4,6]
 */
 
-
+function doubleNumbers(array) {
+    var result = [];
+    for (var i = 0; i < array.length; i++) {
+        result[i] = array[i] * 2;
+    }
+    return result;
+};
 
 
 
@@ -65,8 +77,14 @@ Examples:
 - if you call multiplyNumbers([1,2,3], 5) you'd get [5,10,15]
 */
 
-
-
+function multiplyNumbers(array, multiplier) {
+    var result = [];
+    for (var i = 0; i < array.length; i++) {
+        result[i] = array[i] * multiplier;
+    }
+    return result;
+};
+// console.log(multiplyNumbers([1,2,3],2))
 
 
 
@@ -82,11 +100,25 @@ Write function named doubleLetters that will take a string and double every lett
 
 Example: if you pass it "abc" then it should return "aabbcc"
 */
+// sometimes strings can behave like arrays ('hello'[0] = h; 'hello'[1] = e; ... )
 
+// function doubleLetters(array) {
+//   var result = '';
+//   for (var i=0; i<array.length; i++) {
+//     result[i] = (array[i] + array[i])
+//     }
+//   return result;
+// }
+// console.log(doubleLetters('hello'));
 
-
-
-
+// function doubleLetters(String) {
+//   var result = [];
+//   for (var i=0; i<String.length; i++) {
+//     result[i] = (String[i] + String[i])
+//     }
+//   return result;
+// }
+// console.log(doubleLetters('hello'));
 
 
 
@@ -103,8 +135,6 @@ Example: if you pass it ["a", "b", "c"] and ["d", "e", "f"] then it should retur
 
 NOTE: you can assume each input will be the same length
 */
-
-
 
 
 
@@ -182,9 +212,6 @@ Example:
 
 If you pass it "hello" then it should return "olleh"
 */
-
-
-
 
 
 
@@ -294,7 +321,6 @@ If you pass "you" it should return 2
 
 
 
-
 /*
 ----------------------------------------
 CHALLENGE
@@ -390,7 +416,6 @@ Example:
 If you pass 0,2 it should return false because the only number between 0 and 2 is 1
 If you pass 0,6 it should return true because between 0 and six (the numbers 1,2,3,4,5) there are three odds - 1, 3 and 5
 */
-
 
 
 
@@ -521,7 +546,6 @@ If you pass 2,"d" it should return {"d": true, "dd": true}
 
 
 
-
 /*
 ----------------------------------------
 CHALLENGE
@@ -583,10 +607,6 @@ If you pass ["Sue", "Will", "Rachel"] it should return "Sue, Will and Rachel"
 
 
 
-
-
-
-
 /*
 ----------------------------------------
 CHALLENGE
@@ -618,8 +638,6 @@ Example:
 
 If you pass [0,-3,2,5] it should return -3
 */
-
-
 
 
 
@@ -748,11 +766,6 @@ If you pass {1999: 4036, 2000: 7654} it should return '2000'
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
 CHALLENGE
@@ -764,7 +777,6 @@ Example:
 
 If you pass {1999: 4036, 2000: 7654} and 4036, it should return '1999'
 */
-
 
 
 
@@ -794,4 +806,4 @@ If you pass {1999: 4036, 2000: 7654} and 4036, it should return true
 
 
 
-// 
+//
