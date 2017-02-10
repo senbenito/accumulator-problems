@@ -102,14 +102,16 @@ Example: if you pass it "abc" then it should return "aabbcc"
 */
 // sometimes strings can behave like arrays ('hello'[0] = h; 'hello'[1] = e; ... )
 
-// function doubleLetters(array) {
-//   var result = '';
-//   for (var i=0; i<array.length; i++) {
-//     result[i] = (array[i] + array[i])
-//     }
-//   return result;
-// }
-// console.log(doubleLetters('hello'));
+function doubleLetters(String){
+  var result = '';
+  for (var i=0; i<String.length; i++) {
+    result += (String[i] + String[i])
+  }
+  return result;
+}
+console.log(doubleLetters('hello'));
+
+//.join()?!?!?
 
 // function doubleLetters(String) {
 //   var result = [];
@@ -136,7 +138,16 @@ Example: if you pass it ["a", "b", "c"] and ["d", "e", "f"] then it should retur
 NOTE: you can assume each input will be the same length
 */
 
+var arr1 = [];
+var arr2 = [];
 
+function interleave(arr){
+  var result = [];
+  for (var i=0;i<arr.length;i++){
+    result[i] += (arr1[i]).concat(arr2[i])
+  }
+  return result;
+}
 
 
 
