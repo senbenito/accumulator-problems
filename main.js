@@ -222,9 +222,21 @@ If you pass it [[2014, "Horse"], [2015, "Sheep"]] then it should return { 2014: 
 */
 
 
+function arraysToObject(arr){
+  var result = {};
+for (i=0; i<arr.length-1; i++){
+  result[arr[i][i]] = arr[i][i+1];
+  result[arr[i+1][i]] = arr[i+1][i+1];
+}
+  return result;
+}
 
-
-
+// function arraysToObject(arr){
+//   var result = {};
+//   result[arr[0][0]] = arr[0][1];
+//   result[arr[1][0]] = arr[1][1];
+//   return result;
+// }
 
 
 
