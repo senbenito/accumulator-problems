@@ -253,7 +253,13 @@ Example:
 If you pass it "hello" then it should return "olleh"
 */
 
-
+function reverseString(string){
+  var result = [];
+for (var i=0; i<string.length; i++){
+  result.unshift(string[i]);
+}
+  return result.join('');
+}
 
 
 
@@ -274,7 +280,19 @@ If you pass it "haha" then it should return true because "ha" (the first half) e
 If you pass it "yay" then it should return false because it's odd
 If you pass it "heehaw" then it should return false because "hee" doesn't equal "haw"
 */
-
+ function repeats(string){
+   var str1 = string.slice(0,string.length/2);
+   var str2 = string.slice(string.length/2);
+   var result = false;
+if (string.length%2===1){
+  result = false;
+} else if (str1 === str2){
+  result = true;
+} else {
+  result = false;
+}
+   return result;
+ }
 
 
 
@@ -293,7 +311,13 @@ Example:
 
 If you pass it "abcdef" then it should return "ace" because those represent every other letter
 */
-
+function everyOther(string){
+  var result = [];
+for (var i=0; i<string.length; i+=2){
+  result.push(string[i]);
+}
+  return result.join('');
+}
 
 
 
