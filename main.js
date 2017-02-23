@@ -338,7 +338,18 @@ If you pass "aaa" it should return true
 If you pass "aba" it should return false
 */
 
-
+function allEqual(string){
+  var checkLetter = string.slice(0,1);
+  var result = true;
+  for (var i=0; i<string.length; i++){
+    if (string[i]===checkLetter){
+      result = true;
+    } else {
+      result = false;
+    }
+  }
+   return result;
+}
 
 
 
@@ -358,7 +369,16 @@ If you pass "45" it should return 9
 If you pass "246" it should return 10
 */
 
-
+function sumLetters(string){
+  var result = [];
+for (var i=0; i<string.length; i++){
+  result.push(parseInt(string[i]));
+}
+  var resultSum = result.reduce(function(acc, val) {
+  return acc + val;
+}, 0);
+return resultSum
+}
 
 
 
