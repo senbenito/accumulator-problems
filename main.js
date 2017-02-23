@@ -397,7 +397,17 @@ Example:
 If you pass "you" it should return 2
 */
 
+var vowels = ['a','e','i','o','u'];
 
+function countVowels(string){
+  var result = 0;
+for (var i=0; i<string.length; i++){
+  if (vowels.includes(string[i])){
+    result += 1;
+  } else {}
+}
+  return result;
+}
 
 
 
@@ -419,6 +429,13 @@ If you pass "you" it should return ["y", "o", "u"]
 NOTE: do not use the builtin `split` method
 */
 
+function split(string){
+  var result = [];
+for (var i=0; i<string.length; i++){
+  result.push(string[i]);
+}
+  return result;
+}
 
 
 
@@ -440,7 +457,13 @@ Example:
 If you pass "Hello" it should return [ 72, 101, 108, 108, 111 ]
 */
 
-
+function getCodePoints(string){
+  var result = [];
+for (var i=0; i<string.length; i++){
+  result.push(string.codePointAt(i));
+}
+  return result;
+}
 
 
 
@@ -461,7 +484,14 @@ If you pass "Hello" it should return {H: 0, e: 1, l: 3, o: 4}
 */
 
 
+function letterMap(string){
+  var result = {};
+for (var i=0; i<string.length; i++){
+  result[string[i]] = i;
+}
 
+  return result;
+}
 
 
 
@@ -480,7 +510,18 @@ If you pass "Yo" it should return {Y: 1, o: 1}
 If you pass "Hello" it should return {"H": 1, "e": 1, "l": 2, "o": 1}
 */
 
+function letterCount(string){
+  var result = {};
+for (var i=0; i<string.length; i++){
+  if (!result[string[i]]){
+    result[string[i]] = 1;
+  } else {
+    result[string[i]]++;
+  }
+}
 
+  return result;
+}
 
 
 
@@ -501,7 +542,32 @@ If you pass 0,2 it should return false because the only number between 0 and 2 i
 If you pass 0,6 it should return true because between 0 and six (the numbers 1,2,3,4,5) there are three odds - 1, 3 and 5
 */
 
+function threeOdds(number1, number2){
+  var result = false;
+  var testArray = [];
+  for (var x=number1; x<=number2; x++){
+    testArray.push(x);
+    console.log(testArray);
+  }
+  var countOdds = [];
+  for (var y=0; y<testArray.length; y++){
+    if (testArray[y]%2===1){
+      countOdds.push(1);
+      console.log(countOdds);
+  }
+}
+  console.log(countOdds.join());
+ var oddsCheck = countOdds.reduce(function(acc, val) {
+  return acc + val;
+}, 0);
 
+  if (oddsCheck < 3) {
+    result = false;
+  } else {
+    result = true;
+  }
+  return result;
+}
 
 
 
