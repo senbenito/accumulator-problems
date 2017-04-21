@@ -781,7 +781,21 @@ If you pass [1,1], 1 it should return true
 If you pass [1,2], 1 it should return false
 */
 
-
+function every(array, number){
+  if (array.length === 0){
+    return true;
+  } else {
+    for (let i=0; i<array.length; i++){
+      if (array[i] !== number){
+        console.log('false' + array[i]);
+        return false;
+      } else {
+        console.log('true' + array[i]);
+      }//closes else for array = number
+    }//closes for loop
+      return true;
+  }//closes else for array.length > 0
+}//closes every()
 
 
 
