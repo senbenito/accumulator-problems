@@ -102,12 +102,12 @@ Example: if you pass it "abc" then it should return "aabbcc"
 */
 // sometimes strings can behave like arrays ('hello'[0] = h; 'hello'[1] = e; ... )
 
-function doubleLetters(String){
-  var result = '';
-  for (var i=0; i<String.length; i++) {
-    result += (String[i] + String[i])
-  }
-  return result;
+function doubleLetters(String) {
+    var result = '';
+    for (var i = 0; i < String.length; i++) {
+        result += (String[i] + String[i])
+    }
+    return result;
 }
 console.log(doubleLetters('hello'));
 
@@ -141,13 +141,13 @@ NOTE: you can assume each input will be the same length
 var arr1 = [];
 var arr2 = [];
 
-function interleave(arr1, arr2){
-  var result = [];
-  for (var i=0;i<arr1.length;i++){
-    result.push(arr1[i], arr2[i]);
-    console.log(result);
-  }
-  return result;
+function interleave(arr1, arr2) {
+    var result = [];
+    for (var i = 0; i < arr1.length; i++) {
+        result.push(arr1[i], arr2[i]);
+        console.log(result);
+    }
+    return result;
 }
 
 
@@ -168,12 +168,12 @@ Example: if you pass it 4 and "Hello" then it should return ["Hello", "Hello", "
 howMany = 0;
 ofWhat = '';
 
-function createRange(number, string){
-  var result = [];
-  for (var i=0; i<number; i++){
-    result.push(string);
-  }
-  return result;
+function createRange(number, string) {
+    var result = [];
+    for (var i = 0; i < number; i++) {
+        result.push(string);
+    }
+    return result;
 }
 
 
@@ -195,12 +195,12 @@ If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "br
 
 var inputArray = [];
 
-function flipArray(arr){
-  var result = {};
-  for (var i=0; i<arr.length; i++){
-    result[arr[i]] = i;
-  }
-  return result;
+function flipArray(arr) {
+    var result = {};
+    for (var i = 0; i < arr.length; i++) {
+        result[arr[i]] = i;
+    }
+    return result;
 }
 
 
@@ -222,13 +222,13 @@ If you pass it [[2014, "Horse"], [2015, "Sheep"]] then it should return { 2014: 
 */
 
 
-function arraysToObject(arr){
-  var result = {};
-for (i=0; i<arr.length-1; i++){
-  result[arr[i][i]] = arr[i][i+1];
-  result[arr[i+1][i]] = arr[i+1][i+1];
-}
-  return result;
+function arraysToObject(arr) {
+    var result = {};
+    for (i = 0; i < arr.length - 1; i++) {
+        result[arr[i][i]] = arr[i][i + 1];
+        result[arr[i + 1][i]] = arr[i + 1][i + 1];
+    }
+    return result;
 }
 
 // function arraysToObject(arr){
@@ -253,12 +253,12 @@ Example:
 If you pass it "hello" then it should return "olleh"
 */
 
-function reverseString(string){
-  var result = [];
-for (var i=0; i<string.length; i++){
-  result.unshift(string[i]);
-}
-  return result.join('');
+function reverseString(string) {
+    var result = [];
+    for (var i = 0; i < string.length; i++) {
+        result.unshift(string[i]);
+    }
+    return result.join('');
 }
 
 
@@ -280,19 +280,19 @@ If you pass it "haha" then it should return true because "ha" (the first half) e
 If you pass it "yay" then it should return false because it's odd
 If you pass it "heehaw" then it should return false because "hee" doesn't equal "haw"
 */
- function repeats(string){
-   var str1 = string.slice(0,string.length/2);
-   var str2 = string.slice(string.length/2);
-   var result = false;
-if (string.length%2===1){
-  result = false;
-} else if (str1 === str2){
-  result = true;
-} else {
-  result = false;
+function repeats(string) {
+    var str1 = string.slice(0, string.length / 2);
+    var str2 = string.slice(string.length / 2);
+    var result = false;
+    if (string.length % 2 === 1) {
+        result = false;
+    } else if (str1 === str2) {
+        result = true;
+    } else {
+        result = false;
+    }
+    return result;
 }
-   return result;
- }
 
 
 
@@ -311,12 +311,12 @@ Example:
 
 If you pass it "abcdef" then it should return "ace" because those represent every other letter
 */
-function everyOther(string){
-  var result = [];
-for (var i=0; i<string.length; i+=2){
-  result.push(string[i]);
-}
-  return result.join('');
+function everyOther(string) {
+    var result = [];
+    for (var i = 0; i < string.length; i += 2) {
+        result.push(string[i]);
+    }
+    return result.join('');
 }
 
 
@@ -338,17 +338,17 @@ If you pass "aaa" it should return true
 If you pass "aba" it should return false
 */
 
-function allEqual(string){
-  var checkLetter = string.slice(0,1);
-  var result = true;
-  for (var i=0; i<string.length; i++){
-    if (string[i]===checkLetter){
-      result = true;
-    } else {
-      result = false;
+function allEqual(string) {
+    var checkLetter = string.slice(0, 1);
+    var result = true;
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === checkLetter) {
+            result = true;
+        } else {
+            result = false;
+        }
     }
-  }
-   return result;
+    return result;
 }
 
 
@@ -369,15 +369,15 @@ If you pass "45" it should return 9
 If you pass "246" it should return 10
 */
 
-function sumLetters(string){
-  var result = [];
-for (var i=0; i<string.length; i++){
-  result.push(parseInt(string[i]));
-}
-  var resultSum = result.reduce(function(acc, val) {
-  return acc + val;
-}, 0);
-return resultSum
+function sumLetters(string) {
+    var result = [];
+    for (var i = 0; i < string.length; i++) {
+        result.push(parseInt(string[i]));
+    }
+    var resultSum = result.reduce(function(acc, val) {
+        return acc + val;
+    }, 0);
+    return resultSum
 }
 
 
@@ -397,16 +397,16 @@ Example:
 If you pass "you" it should return 2
 */
 
-var vowels = ['a','e','i','o','u'];
+var vowels = ['a', 'e', 'i', 'o', 'u'];
 
-function countVowels(string){
-  var result = 0;
-for (var i=0; i<string.length; i++){
-  if (vowels.includes(string[i])){
-    result += 1;
-  } else {}
-}
-  return result;
+function countVowels(string) {
+    var result = 0;
+    for (var i = 0; i < string.length; i++) {
+        if (vowels.includes(string[i])) {
+            result += 1;
+        } else {}
+    }
+    return result;
 }
 
 
@@ -429,12 +429,12 @@ If you pass "you" it should return ["y", "o", "u"]
 NOTE: do not use the builtin `split` method
 */
 
-function split(string){
-  var result = [];
-for (var i=0; i<string.length; i++){
-  result.push(string[i]);
-}
-  return result;
+function split(string) {
+    var result = [];
+    for (var i = 0; i < string.length; i++) {
+        result.push(string[i]);
+    }
+    return result;
 }
 
 
@@ -457,12 +457,12 @@ Example:
 If you pass "Hello" it should return [ 72, 101, 108, 108, 111 ]
 */
 
-function getCodePoints(string){
-  var result = [];
-for (var i=0; i<string.length; i++){
-  result.push(string.codePointAt(i));
-}
-  return result;
+function getCodePoints(string) {
+    var result = [];
+    for (var i = 0; i < string.length; i++) {
+        result.push(string.codePointAt(i));
+    }
+    return result;
 }
 
 
@@ -484,13 +484,13 @@ If you pass "Hello" it should return {H: 0, e: 1, l: 3, o: 4}
 */
 
 
-function letterMap(string){
-  var result = {};
-for (var i=0; i<string.length; i++){
-  result[string[i]] = i;
-}
+function letterMap(string) {
+    var result = {};
+    for (var i = 0; i < string.length; i++) {
+        result[string[i]] = i;
+    }
 
-  return result;
+    return result;
 }
 
 
@@ -510,17 +510,17 @@ If you pass "Yo" it should return {Y: 1, o: 1}
 If you pass "Hello" it should return {"H": 1, "e": 1, "l": 2, "o": 1}
 */
 
-function letterCount(string){
-  var result = {};
-for (var i=0; i<string.length; i++){
-  if (!result[string[i]]){
-    result[string[i]] = 1;
-  } else {
-    result[string[i]]++;
-  }
-}
+function letterCount(string) {
+    var result = {};
+    for (var i = 0; i < string.length; i++) {
+        if (!result[string[i]]) {
+            result[string[i]] = 1;
+        } else {
+            result[string[i]]++;
+        }
+    }
 
-  return result;
+    return result;
 }
 
 
@@ -542,31 +542,29 @@ If you pass 0,2 it should return false because the only number between 0 and 2 i
 If you pass 0,6 it should return true because between 0 and six (the numbers 1,2,3,4,5) there are three odds - 1, 3 and 5
 */
 
-function threeOdds(number1, number2){
-  var result = false;
-  var testArray = [];
-  for (var x=number1; x<=number2; x++){
-    testArray.push(x);
-    console.log(testArray);
-  }
-  var countOdds = [];
-  for (var y=0; y<testArray.length; y++){
-    if (testArray[y]%2===1){
-      countOdds.push(1);
-      console.log(countOdds);
-  }
-}
-  console.log(countOdds.join());
- var oddsCheck = countOdds.reduce(function(acc, val) {
-  return acc + val;
-}, 0);
+function threeOdds(number1, number2) {
+    var result = false;
+    var testArray = [];
+    for (var x = number1 + 1; x < number2; x++) {
+        testArray.push(x);
+    }
 
-  if (oddsCheck < 3) {
-    result = false;
-  } else {
-    result = true;
-  }
-  return result;
+    var countOdds = [];
+    for (var y = 0; y < testArray.length; y++) {
+        if (testArray[y] % 2 === 1) {
+            countOdds.push(1);
+        }
+    }
+    var oddsCheck = countOdds.reduce(function(acc, val) {
+        return acc + val;
+    }, 0);
+
+    if (oddsCheck < 3) {
+        result = false;
+    } else {
+        result = true;
+    }
+    return result;
 }
 
 
@@ -587,6 +585,21 @@ Example:
 If you pass "a", 3, "*" it should return "**a" - that is, a string of length 3, padded on the left by the "*" character
 */
 
+function leftPad(string, paddingLength, fillCharacter) {
+    if (string.length >= paddingLength) {
+        return string;
+    } else {
+        var result = [];
+        for (var i = 0; i < paddingLength; i++) {
+            if (i + string.length < paddingLength) {
+                result.push(fillCharacter);
+            } else {
+                result.push(string);
+                return result.join('');
+            }
+        }
+    }
+}
 
 
 
@@ -607,7 +620,14 @@ If you pass "a", 3 it should return "aaa"
 If you pass "b", 3 it should return "bb"
 */
 
-
+function createString(stringLength, letter) {
+    // console.log(`letter: ${letter}, stringLength: ${stringLength}`)
+    var result = [];
+    for (var i = 0; i < stringLength; i++) {
+        result.push(letter);
+    }
+    return result.join('');
+}
 
 
 
@@ -629,7 +649,19 @@ If you pass 4 it should return 24 since that's 4 * 3 * 2 * 1
 If you pass 5 it should return 120 since that's 5 * 4 * 3 * 2 * 1
 */
 
+function factorial(number) {
+    var result = 0;
+    // console.log(`number: ${number}`);
+    for (var i = 0; i <= number; i++) {
+        if (i === 0 || i === 1) {
+            result = 1;
+        } else {
+            result = result * i;
+        }
+    }
 
+    return result;
+}
 
 
 
@@ -649,7 +681,17 @@ If you pass 1 it should return [1]
 If you pass 3 it should return [1,2,3]
 */
 
-
+function arrayOfNumbers(number) {
+    var result = [];
+    if (number === 0) {
+        return result;
+    } else {
+        for (var i = 1; i <= number; i++) {
+            result.push(i);
+        }
+    }
+    return result;
+}
 
 
 
@@ -668,8 +710,24 @@ Example:
 If you pass 1,4 it should return {"1": "odd", "2": "even", "3": "odd", "4": "even"}
 */
 
-
-
+function evenOdd(numberStart, numberEnd) {
+    var result = {};
+    // console.log(`numberStart: ${numberStart}, numberEnd: ${numberEnd}`)
+    if (numberStart === 0 && numberEnd === 0) {
+        return result;
+    } else {
+        for (var i = numberStart; i <= numberEnd; i++) {
+            if (i === 0) {
+                result[[i]] = 'even';
+            } else if (i % 2 === 1) {
+                result[[i]] = 'odd';
+            } else {
+                result[[i]] = 'even';
+            }
+        }
+    }
+    return result;
+}
 
 
 
@@ -687,7 +745,23 @@ Example:
 
 If you pass 2,"d" it should return {"d": true, "dd": true}
 */
-
+function growingKeys(howMany, letter) {
+    var result = {};
+    var preResult = [];
+    if (howMany === 0) {
+        return result;
+    } else {
+        for (var i = 0; i < howMany; i++) {
+            if (i === 0) {
+                preResult[0] = 'letter'
+            } else {
+                preResult[i] = 'letter' + preResult[i - 1]
+            }
+        }
+        
+    }
+    return result;
+}
 
 
 
