@@ -109,7 +109,7 @@ function doubleLetters(String) {
     }
     return result;
 }
-console.log(doubleLetters('hello'));
+// console.log(doubleLetters('hello'));
 
 //.join()?!?!?
 
@@ -145,7 +145,7 @@ function interleave(arr1, arr2) {
     var result = [];
     for (var i = 0; i < arr1.length; i++) {
         result.push(arr1[i], arr2[i]);
-        console.log(result);
+        // console.log(result);
     }
     return result;
 }
@@ -751,16 +751,14 @@ function growingKeys(howMany, letter) {
     if (howMany === 0) {
         return result;
     } else {
-        for (var i = 0; i < howMany; i++) {
-            if (i === 0) {
-                preResult[0] = 'letter'
-            } else {
-                preResult[i] = 'letter' + preResult[i - 1]
-            }
+        for (let i = 0; i < howMany; i++) {
+          preResult.push(letter);
+          let keyI = preResult.join("");
+          result[keyI] = true;
+          console.log(keyI, result.keyI);
         }
-        
-    }
     return result;
+    }
 }
 
 
