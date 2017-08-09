@@ -755,7 +755,7 @@ function growingKeys(howMany, letter) {
           preResult.push(letter);
           let keyI = preResult.join("");
           result[keyI] = true;
-          console.log(keyI, result.keyI);
+          // console.log(keyI, result.keyI);
         }
     return result;
     }
@@ -787,10 +787,10 @@ function every(array, number){
   } else {
     for (let i=0; i<array.length; i++){
       if (array[i] !== number){
-        console.log('false' + array[i]);
+        // console.log('false' + array[i]);
         return false;
       } else {
-        console.log('true' + array[i]);
+        // console.log('true' + array[i]);
       }//closes else for array = number
     }//closes for loop
       return true;
@@ -815,7 +815,16 @@ If you pass [1,2], 1 it should return true
 If you pass [3,2], 1 it should return false
 */
 
-
+let some = (array, number) => {
+  if (array.length === 0) {
+    return false;
+  } else if (array.shift() === number) {
+    return true;
+  } else {
+    return some(array, number);
+  }
+  return false;
+}
 
 
 
@@ -827,7 +836,7 @@ If you pass [3,2], 1 it should return false
 CHALLENGE
 ----------------------------------------
 
-Write a function named some that takes an array and returns a string with the elements joined by commas, with a trailing 'and'
+Write a function named toSentence that takes an array and returns a string with the elements joined by commas, with a trailing 'and'
 
 Example:
 
@@ -835,6 +844,15 @@ If you pass ["Sue", "Will"] it should return "Sue and Will"
 If you pass ["Sue", "Will", "Rachel"] it should return "Sue, Will and Rachel"
 */
 
+let toSentence = (array, result="") => {
+  if (array.length < 2) {
+    return result;
+  } else if (array.length < 3){
+    return result += `${array[0]} and ${array[1]}`;
+  }
+  result += `${array.shift()}, `;
+  return toSentence(array, result);
+}
 
 
 
@@ -856,7 +874,13 @@ If you pass ["Sue", "Will"] it should return "SW"
 If you pass ["Java", Script", "Object", "Notation"] it should return "JSON"
 */
 
-
+let acronym = (array, result="") => {
+  if (array.length === 0){
+    return result;
+  }
+  result += array.shift()[0];
+  return acronym(array, result);
+}
 
 
 
@@ -875,7 +899,16 @@ Example:
 If you pass [0,-3,2,5] it should return -3
 */
 
-
+let min = (array, result) => {
+  if (array.length === 0){
+    return result;
+  }
+  let compare = array.shift();
+  if (compare > result || result === undefined) {
+    result = compare;
+  }
+  return min (array, result);
+}
 
 
 
